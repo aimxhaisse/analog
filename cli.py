@@ -57,11 +57,6 @@ def filmify(path: str):
     images = []
     for entry in os.listdir(path):
         fp = f'{path}/{entry}'
-        if os.path.isdir(fp):
-            click.echo(f'processing subdirectory {fp}...')
-            filmify(fp)
-            continue
-
         compress_if_needed(fp)
         rename_if_needed(fp)
         
