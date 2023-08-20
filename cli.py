@@ -46,6 +46,7 @@ def rename_if_needed(fp):
         is_uuid = '^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$'
         if not re.match(is_uuid, name):
             dst = f'{p.parent}/{uuid.uuid4()}.tif'
+            click.echo(f'renaming {fp} to {dst}...')
             os.rename(fp, dst)
 
 
