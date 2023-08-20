@@ -1,8 +1,10 @@
 [tool.poetry]
 name = "analog"
 version = "0.1.0"
-description = ""
+description = "Tools to process Analog films"
 authors = ["s. rannou <mxs@sbrk.org>"]
+readme = "README.md"
+packages = [{include = "cli.py"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -14,3 +16,6 @@ Wand = "^0.6.11"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+analog = "cli:main"
